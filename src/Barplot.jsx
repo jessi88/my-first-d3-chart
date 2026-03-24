@@ -171,13 +171,13 @@ const Barplot = ({
 
           {/* X axis label */}
           <text
-            x={innerWidth / 2}
+            x={0}
             y={innerHeight + 42}
-            textAnchor="middle"
+            textAnchor="start"
             fontSize={12}
             fill="#374151"
           >
-            Number of Students
+            NUMBER OF STUDENTS
           </text>
         </g>
       </svg>
@@ -188,8 +188,8 @@ const Barplot = ({
             position: "fixed",
             left: tooltip.x + 12,
             top: tooltip.y + 12,
-            background: "#111827",
-            color: "#ffffff",
+            background: "rgba(240, 240, 240, 0.85)",
+            color: barHighlightColor,
             padding: "8px 10px",
             borderRadius: "8px",
             fontSize: "12px",
@@ -203,7 +203,7 @@ const Barplot = ({
           <div>
             <strong>{tooltip.country}</strong>
           </div>
-          <div>Students: {tooltip.students}</div>
+          <div>{tooltip.students} Students</div>
         </div>
       )}
     </div>
