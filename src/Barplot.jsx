@@ -12,9 +12,9 @@ const Barplot = ({
 }) => {
   const margin = {
     top: 0,
-    right: 20,
+    right: 25,
     bottom: 0,
-    left: 100,
+    left: 115,
   };
 
   const innerWidth = width - margin.left - margin.right;
@@ -78,7 +78,12 @@ const Barplot = ({
                 dominantBaseline="middle"
                 fontSize={12}
                 fill={isHovered ? labelHighlightColor : labelColor}
-                style={{ transition: "fill 0.2s ease" }}
+                style={{
+                  transition: "transform 0.2s ease, fill 0.2s ease",
+                  transform: isHovered ? "scale(1.15)" : "scale(1)",
+                  transformBox: "fill-box",
+                  transformOrigin: "right center",
+                }}
               >
                 {d.country}
               </text>
@@ -88,7 +93,12 @@ const Barplot = ({
                 dominantBaseline="middle"
                 fontSize={12}
                 fill={isHovered ? labelHighlightColor : labelColor}
-                style={{ transition: "fill 0.2s ease" }}
+                style={{
+                  transition: "transform 0.2s ease, fill 0.2s ease",
+                  transform: isHovered ? "scale(1.15)" : "scale(1)",
+                  transformBox: "fill-box",
+                  transformOrigin: "left center",
+                }}
               >
                 {d.students}
               </text>
