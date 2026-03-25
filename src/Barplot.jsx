@@ -154,13 +154,10 @@ const Barplot = ({
                   y={y + yScale.bandwidth() / 2}
                   textAnchor="end"
                   dominantBaseline="middle"
-                  fontSize={12}
-                  fill={isHovered ? labelHighlightColor : labelColor}
                   style={{
-                    transition: "transform 0.2s ease, fill 0.2s ease",
-                    transform: isHovered ? "scale(1.15)" : "scale(1)",
-                    transformBox: "fill-box",
-                    transformOrigin: "right center",
+                    fontSize: isHovered ? 13.5 : 12,
+                    fill: isHovered ? labelHighlightColor : labelColor,
+                    transition: "font-size 0.2s ease, fill 0.2s ease",
                   }}
                 >
                   {d.country}
