@@ -27,7 +27,7 @@ const data = [
 const width = 500;
 const height = 400;
 const barColor = "#1b4445";
-const barHighlightColor = "#3e8b5f";
+const barHighlightColor = "#3a7f58";
 const labelColor = "#374151";
 
 function App() {

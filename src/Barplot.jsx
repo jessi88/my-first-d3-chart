@@ -146,7 +146,7 @@ const Barplot = ({
                     hoveredCountry
                       ? isHovered
                         ? 1
-                        : 0.35 // fade non-hovered bars
+                        : 0.5 // fade non-hovered bars
                       : 0.85
                   }
                   style={{
@@ -168,10 +168,11 @@ const Barplot = ({
                     opacity: hoveredCountry
                       ? isHovered
                         ? 1
-                        : 0.35 // fade non-hovered labels
+                        : 0.6 // fade non-hovered labels
                       : 1,
+                    fontWeight: isHovered ? 600 : 400,
                     transition:
-                      "font-size 0.2s ease, fill 0.2s ease, opacity 0.2s ease",
+                      "font-size 0.2s ease, fill 0.2s ease, opacity 0.2s ease, font-weight 0.2s ease",
                   }}
                 >
                   {d.country}
