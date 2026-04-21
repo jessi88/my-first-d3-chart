@@ -88,3 +88,8 @@ body {
   font-size: 12px;
   color: var(--brand-text-dim);
 }
+
+.chart-wrapper {
+  width: 100%;
+  max-width: 500px;
+}

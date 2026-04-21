@@ -12,7 +12,7 @@ const Barplot = ({
   const margin = {
     top: 50,
     right: 25,
-    bottom: 0,
+    bottom: 30,
     left: 115,
   };
 
@@ -79,8 +79,8 @@ const Barplot = ({
   };
 
   return (
-    <div style={{ position: "relative", width }}>
-      <svg width={width} height={height}>
+    <div className="chart-wrapper">
+      <svg width="100%" height="auto" viewBox={`0 0 ${width} ${height}`}>
         <g transform={`translate(${margin.left}, ${margin.top})`}>
           {/* Vertical grid lines + x-axis tick labels */}
           {ticks.map((tick) => {
@@ -191,6 +191,18 @@ const Barplot = ({
             fill="#374151"
           >
             NUMBER OF STUDENTS
+          </text>
+
+          {/* Note below the graph */}
+          <text
+            x={xScale(ticks[0])}
+            y={innerHeight + 20}
+            textAnchor="start"
+            dx="-0.3em"
+            fontSize={12}
+            fill="#94a3b8"
+          >
+            Note: Countries with fewer than 3 enrollments are excluded.
           </text>
         </g>
       </svg>
