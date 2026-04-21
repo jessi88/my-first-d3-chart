@@ -29,7 +29,6 @@ const height = 400;
 const barColor = "#1b4445";
 const barHighlightColor = "#3e8b5f";
 const labelColor = "#374151";
-const labelHighlightColor = "#020617";
 
 function App() {
   return (
@@ -40,7 +39,6 @@ function App() {
       barColor={barColor}
       barHighlightColor={barHighlightColor}
       labelColor={labelColor}
-      labelHighlightColor={labelHighlightColor}
     />
   );
 }

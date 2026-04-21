@@ -8,12 +8,11 @@ const Barplot = ({
   barColor,
   barHighlightColor,
   labelColor,
-  labelHighlightColor,
 }) => {
   const margin = {
-    top: 0,
+    top: 50,
     right: 25,
-    bottom: 45,
+    bottom: 0,
     left: 115,
   };
 
@@ -99,7 +98,7 @@ const Barplot = ({
                 />
                 <text
                   x={x}
-                  y={innerHeight + 24}
+                  y={-8}
                   textAnchor="middle"
                   fontSize={12}
                   fill="#6b7280"
@@ -114,8 +113,8 @@ const Barplot = ({
           <line
             x1={0}
             x2={innerWidth}
-            y1={innerHeight}
-            y2={innerHeight}
+            y1={0}
+            y2={0}
             stroke="#9ca3af"
             strokeWidth={1}
           />
@@ -143,10 +142,19 @@ const Barplot = ({
                   rx={4}
                   ry={4}
                   fill={isHovered ? barHighlightColor : barColor}
-                  opacity={isHovered ? 1 : 0.85}
+                  opacity={
+                    hoveredCountry
+                      ? isHovered
+                        ? 1
+                        : 0.35 // fade non-hovered bars
+                      : 0.85
+                  }
                   style={{
                     transition:
-                      "width 0.8s ease, fill 0.2s ease, opacity 0.2s ease",
+                      "width 0.8s ease, fill 0.2s ease, opacity 0.2s ease, transform 0.2s ease",
+                    transform: isHovered ? "scaleY(1.08)" : "scaleY(1)",
+                    transformOrigin: "center",
+                    transformBox: "fill-box",
                   }}
                 />
                 <text
@@ -156,8 +164,14 @@ const Barplot = ({
                   dominantBaseline="middle"
                   style={{
                     fontSize: isHovered ? 13.5 : 12,
-                    fill: isHovered ? labelHighlightColor : labelColor,
-                    transition: "font-size 0.2s ease, fill 0.2s ease",
+                    fill: isHovered ? barHighlightColor : labelColor,
+                    opacity: hoveredCountry
+                      ? isHovered
+                        ? 1
+                        : 0.35 // fade non-hovered labels
+                      : 1,
+                    transition:
+                      "font-size 0.2s ease, fill 0.2s ease, opacity 0.2s ease",
                   }}
                 >
                   {d.country}
@@ -168,9 +182,10 @@ const Barplot = ({
 
           {/* X axis label */}
           <text
-            x={0}
-            y={innerHeight + 42}
+            x={xScale(ticks[0])}
+            y={-28}
             textAnchor="start"
+            dx="-0.3em"
             fontSize={12}
             fill="#374151"
           >
