@@ -25,7 +25,7 @@ const data = [
 ];
 
 const width = 1000;
-const height = 500;
+const height = 600;
 const barColor = "#1b4445";
 const barHighlightColor = "#3a7f58";
 const labelColor = "#374151";
