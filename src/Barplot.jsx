@@ -11,7 +11,7 @@ const Barplot = ({
 }) => {
   const margin = {
     top: 50,
-    right: 25,
+    right: 0,
     bottom: 30,
     left: 115,
   };
@@ -79,7 +79,7 @@ const Barplot = ({
   };
 
   return (
-    <div className="chart-wrapper">
+    <div>
       <svg width="100%" height="auto" viewBox={`0 0 ${width} ${height}`}>
         <g transform={`translate(${margin.left}, ${margin.top})`}>
           {/* Vertical grid lines + x-axis tick labels */}

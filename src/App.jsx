@@ -24,8 +24,8 @@ const data = [
   { country: "New Zealand", students: 3 },
 ];
 
-const width = 500;
-const height = 400;
+const width = 1000;
+const height = 500;
 const barColor = "#1b4445";
 const barHighlightColor = "#3a7f58";
 const labelColor = "#374151";
